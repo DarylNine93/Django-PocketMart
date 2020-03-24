@@ -1,0 +1,127 @@
+{% extends "base_layout.html" %}
+{% load static %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="content">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="hpanel hgreen contact-panel">
+                <div class="panel-body">
+                    <div class="label pull-right">
+                        <div class="btn-group">
+                            <i class="fa fa-facebook social-icon btn btn-default btn-xs"></i>
+                            <i class="fa fa-twitter social-icon btn btn-default btn-xs"></i>
+                            <i class="fa fa-linkedin social-icon btn btn-default btn-xs"></i>
+                            <i class="fa fa-stack-overflow social-icon btn btn-default btn-xs"></i>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div style="text-align: center;">
+                        <img alt="logo" class="img-circle img-small" src="{% static '/images/a2.jpg' %}">
+                        <h3><a href="#"> {{ user.username }} </a></h3>
+                        <p>
+                        <div class="text-muted font-bold m-b-xs">
+                            {% if user.is_staff %}
+                            <span style="font-weight:bold;">Administrateur</span>
+                            {% else %}
+                            <span style="font-weight:bold;">Utilisateur</span>
+                            {% endif %}
+                            <span style="font-weight:bold;">  | Yaounde, Cameroun</span>
+                        </div>
+                        </p>
+                        <p>{{ user.email }}</p>
+                        <p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-footer contact-footer round-corner-one">
+                    <div class="row">
+                        <div class="col-md-4 border-right">
+                            <div class="contact-stat"><span>Projects: </span> <strong>200</strong></div>
+                        </div>
+                        <div class="col-md-4 border-right">
+                            <div class="contact-stat"><span>Messages: </span> <strong>300</strong></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-stat"><span>Views: </span> <strong>400</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
+
+    <!--    Modal Template-->
+    <div class="text-center">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="color-line"></div>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Modifier mon Profile</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST"  action="{% url 'users:profile_edit' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-6 border-right">
+                                    <div class="form-group">
+                                        {{ form.username.errors}}
+                                        <label for="username" class="control-label">Nom:</label>
+                                        {{form.username}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form.email.errors }}
+                                        <label for="email" class="control-label">Email:</label>
+                                        {{form.email}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form.telephone.errors }}
+                                        <label for="telephone" class="control-label">Telephone:</label>
+                                        {{form.telephone}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        {{ form.ville.errors }}
+                                        <label for="ville" class="control-label">Ville:</label>
+                                        {{form.ville}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="select-role" class="control-label">Rôle:</label>
+                                        <select id="select-role" class="form-control" name="role">
+                                            <option value="administrateur">Administrateur</option>
+                                            <option value="utilisateur">Utilisateur Simple</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Modifier</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>

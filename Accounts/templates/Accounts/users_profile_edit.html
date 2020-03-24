@@ -1,0 +1,70 @@
+{% block content %}
+{% load static from staticfiles %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exclusive Admin | Responsive Admin Theme</title>
+    <link rel="icon" href="images/favicons.ico"/>
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/font-awesome.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'vendor/metisMenu/dist/metisMenu.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'vendor/animate.css/animate.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'vendor/bootstrap/dist/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'fonts/pe-icon-7-stroke/css/helper.css' %}"/>
+    <link rel="stylesheet" href=" {% static 'styles/styles.css' %}"/>
+</head>
+
+<body class="light-skin blank">
+<div id="wrapper">
+    <div class="content">
+        <div class="register-container">
+            <div class="row">
+
+                <div class="hpanel hgreen">
+                    <div class="panel-body no-shadow th-border">
+                        <div class="pull-right text-right">
+                            <div class="btn-group">
+                                <i class="fa fa-facebook btn btn-default btn-xs"></i>
+                                <i class="fa fa-twitter btn btn-default btn-xs"></i>
+                                <i class="fa fa-linkedin btn btn-default btn-xs"></i>
+                            </div>
+                        </div>
+                        <img alt="logo" class="img-circle m-b m-t-md" src="{% static '/images/a2.jpg' %}">
+                        <h3>Max Simson</h3>
+                        <div class="text-muted font-bold m-b-xs">California, LA</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae
+                            ultrices accumsan.
+                        </p>
+
+                    </div>
+                    <div class="panel-footer contact-footer">
+                        <div class="row">
+                            <div class="col-md-4 border-right">
+                                <div class="contact-stat"><span>Projects: </span> <strong>200</strong></div>
+                            </div>
+                            <div class="col-md-4 border-right">
+                                <div class="contact-stat"><span>Messages: </span> <strong>300</strong></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-stat"><span>Views: </span> <strong>400</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+<script src="{% static 'vendor/slimScroll/jquery.slimscroll.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/metisMenu/dist/metisMenu.min.js' %}"></script>
+<script src="{% static 'vendor/iCheck/icheck.min.js' %}"></script>
+<script src="{% static 'vendor/sparkline/index.js' %}"></script>
+
+{% endblock %}

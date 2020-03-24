@@ -1,0 +1,55 @@
+{% extends 'base_layout2.html'%}
+
+{% block content%}
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Connexion</h3>
+                <small> Bienvenue | Administration PocketMart </small>
+            </div>
+            <div class="hpanel animated-panel zoomIn" style="animation-delay: 0.1s;">
+                <div class="panel-body no-shadow th-border">
+                    {% if form.non_field_errors %}
+                    <ul class='form-errors'>
+                        {% for error in form.non_field_errors %}
+                        <li style="color: red">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.username.errors }}
+                            <label for="username" class="control-label">Nom:</label>
+                            <div>{{ form.username }}</div>
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.errors }}
+                            <label for="password" class="control-label">Mot de Passe:</label>
+                            <div>{{ form.password }}</div>
+                        </div>
+                        {# {% if request.POST.next %} #}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        {# {% endif %} #}
+                        <p class="pull-right"><a href="{% url 'password_reset' %}" class="mdp-link"> Mot de Passe Oublie ?</a></p>
+                        <button class="btn btn-block btn-lg btn-pocketmart-primary" type="submit">Connexion</button>
+                        <br>
+                        <button class="btn btn-block btn-lg btn-pocketmart-secondary" type="submit"> Creer un Compte
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <strong>Administration PocketMart </strong> - Produit de Stellar Constructions & Maintenance Limited
+        <br/> 2018 Copyrights. Tous droits reserves.
+    </div>
+</div>
+
+{% endblock %}
+

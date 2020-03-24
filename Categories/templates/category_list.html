@@ -1,0 +1,49 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="content">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span class="pe pe-7s-check" style="font-size:15px"></span>
+            <span style="font-weight:bold"> {{ message }} </span>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="pull-right">
+            <a href="{% url 'categories:add' %}" class="btn btn-block btn-pocketmart-primary"><i class="pe pe-7s-plus"></i>
+                Ajouter une Categorie</a>
+        </div>
+        <div style="margin-top:3%;">
+            {% for category in categories %}
+            <div class="col-md-3" style="margin-top:5%;">
+                <div class="hpanel hbgblue">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="{{ category.image.url }}">
+                        <div class="m-t-sm">
+                            <strong>{{ category.name }}</strong>
+                            <p class="small">
+                                <a href="{% url 'categories:update' category.id %}" class="btn  btn-warning"><i
+                                        class="pe pe-7s-pen"></i></a> |
+                                <a href="{% url 'categories:delete' category.id %}"
+                                   class="btn btn-danger  demo3"><i class="pe pe-7s-trash"></i></a>
+                            </p>
+                            <p class="small"><a href="#">Liste des Produits</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<script>
+
+</script>

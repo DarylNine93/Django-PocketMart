@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="wrapper">
+        <div class="content">
+            {% for user in users %}
+                <div class="col-md-3" style="margin-top:5%;">
+                    <div class="hpanel hbgblue">
+                        <div class="panel-body text-center">
+                            <img alt="logo" class="img-circle img-small" src="{% static 'placeholder.png' %}">
+                            <div class="m-t-sm">
+                                <strong>{{ user.username }}</strong>
+                                <p class="small">
+                                    {% if user.is_staff %}
+                                        Administrateur
+                                    {% else %}
+                                        Utilisateur
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

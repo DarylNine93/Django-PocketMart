@@ -1,0 +1,481 @@
+{% load static from staticfiles %}
+
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <title>PocketMart | Administration</title>
+    <link rel="icon" href="images/favicons.ico"/>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/metisMenu/dist/metisMenu.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/animate.css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/sweetalert/lib/sweet-alert.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/toastr/build/toastr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/pe-icon-7-stroke/css/helper.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+</head>
+
+<body class="light-skin fixed-navbar sidebar-scroll">
+<div id="header">
+    <div class="color-line">
+    </div>
+    <div id="logo" class="light-version">
+            <span>
+                PocketMart
+            </span>
+    </div>
+    <nav role="navigation">
+        <div class="header-link hide-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="small-logo">
+            <span class="text-primary">PocketMart</span>
+        </div>
+        <div class="mobile-menu">
+            <button type="button" class="navbar-toggle mobile-menu-toggle" data-toggle="collapse"
+                    data-target="#mobile-collapse">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="collapse mobile-navbar" id="mobile-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="" href="login.html">Connexion</a>
+                    </li>
+                    <li>
+                        <a class="" href="login.html">Deconnexion</a>
+                    </li>
+                    <li>
+                        <a class="" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav no-borders">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-speaker"></i>
+                    </a>
+                    <ul class="dropdown-menu hdropdown notification animated flipInX">
+                        <li>
+                            <a>
+                                <span class="label label-success">NEW</span>
+                                <span class="text-info">It is a long established.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="label label-warning">WAR</span>
+                                <span class="text-info"> There are many variations.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="label label-danger">ERR</span>
+                                <span class="text-info"> Contrary to popular belief.</span>
+                            </a>
+                        </li>
+                        <li class="summary">
+                            <a href="#">
+                                <span class="text-info">See all notifications</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-keypad"></i>
+                    </a>
+                    <div class="dropdown-menu hdropdown bigmenu animated flipInX">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <a href="projects.html">
+                                        <i class="pe pe-7s-portfolio text-info"></i>
+                                        <h5 class="text-info">Projects</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="mailbox.html">
+                                        <i class="pe pe-7s-mail text-warning"></i>
+                                        <h5 class="text-warning">Email</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="contacts.html">
+                                        <i class="pe pe-7s-users text-primary"></i>
+                                        <h5 class="text-primary">Contacts</h5>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="forum.html">
+                                        <i class="pe pe-7s-comment text-info"></i>
+                                        <h5 class="text-info">Forum</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="analytics.html">
+                                        <i class="pe pe-7s-graph1 text-danger"></i>
+                                        <h5 class="text-danger">Analytics</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="file_manager.html">
+                                        <i class="pe pe-7s-box1 text-primary"></i>
+                                        <h5 class="text-primary">Files</h5>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle label-menu-corner" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-mail"></i>
+                        <span class="label label-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu hdropdown animated flipInX">
+                        <div class="title">
+                            You have 4 new messages
+                        </div>
+                        <li>
+                            <a>
+                                    <span class="text-primary">
+                                        It is a long established.
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                    <span class="text-primary">
+                                        There are many variations.
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                    <span class="text-primary">
+                                        Lorem Ipsum is simply dummy.
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                    <span class="text-primary">
+                                        Contrary to popular belief.
+                                    </span>
+                            </a>
+                        </li>
+                        <li class="summary">
+                            <a href="#">
+                                <span class="text-info">See All Messages</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'logout' %}">
+                        <i class="pe-7s-upload pe-rotate-90"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<aside id="menu">
+    <div id="navigation">
+        <ul class="nav" id="side-menu">
+            <li class="active">
+                <a href="index.html">
+                    <span class="nav-label">Tableau de bord</span>
+                    <span class="label label-success pull-right">v.1</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="nav-label">Commandes</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="overview.html">
+                            <span class="label label-success pull-right">Start</span> Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transition_two.html">Columns from up</a>
+                    </li>
+                    <li>
+                        <a href="transition_one.html">Columns custom</a>
+                    </li>
+                    <li>
+                        <a href="transition_three.html">Panels zoom</a>
+                    </li>
+                    <li>
+                        <a href="transition_four.html">Rows from down</a>
+                    </li>
+                    <li>
+                        <a href="transition_five.html">Rows from right</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="nav-label">Categories</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="panels.html">Panels design</a>
+                    </li>
+                    <li>
+                        <a href="typography.html">Typography</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Colors &amp; Buttons</a>
+                    </li>
+                    <li>
+                        <a href="components.html">Components</a>
+                    </li>
+                    <li>
+                        <a href="alerts.html">Alerts</a>
+                    </li>
+                    <li>
+                        <a href="modals.html">Modals</a>
+                    </li>
+                    <li>
+                        <a href="loading_buttons.html">Loading buttons</a>
+                    </li>
+                    <li>
+                        <a href="draggable.html">Draggable panels</a>
+                    </li>
+                    <li>
+                        <a href="code_editor.html">Code editor</a>
+                    </li>
+                    <li>
+                        <a href="email_template.html">Email template</a>
+                    </li>
+                    <li>
+                        <a href="nestable_list.html">List</a>
+                    </li>
+                    <li>
+                        <a href="tour.html">Tour</a>
+                    </li>
+                    <li>
+                        <a href="icons.html">Icons library</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="nav-label">Produits</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="contacts.html">Contacts</a>
+                    </li>
+                    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="project.html">Project detail</a>
+                    </li>
+                    <li>
+                        <a href="app_plans.html">App plans</a>
+                    </li>
+                    <li>
+                        <a href="social_board.html">Social board</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="timeline.html">Timeline</a>
+                    </li>
+                    <li>
+                        <a href="notes.html">Notes</a>
+                    </li>
+                    <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="mailbox.html">Mailbox</a>
+                    </li>
+                    <li>
+                        <a href="mailbox_compose.html">Email compose</a>
+                    </li>
+                    <li>
+                        <a href="mailbox_view.html">Email view</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="blog_details.html">Blog article</a>
+                    </li>
+                    <li>
+                        <a href="forum.html">Forum</a>
+                    </li>
+                    <li>
+                        <a href="forum_details.html">Forum details</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="calendar.html">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="invoice.html">Invoice</a>
+                    </li>
+                    <li>
+                        <a href="file_manager.html">File manager</a>
+                    </li>
+                    <li>
+                        <a href="chat_view.html">Chat view</a>
+                    </li>
+                    <li>
+                        <a href="search.html">Search view</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="nav-label">Utilisateurs</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="chartjs.html">ChartJs</a>
+                    </li>
+                    <li>
+                        <a href="flot.html">Flot charts</a>
+                    </li>
+                    <li>
+                        <a href="inline.html">Inline graphs</a>
+                    </li>
+                    <li>
+                        <a href="chartist.html">Chartist</a>
+                    </li>
+                    <li>
+                        <a href="c3.html">C3 Charts</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="package.html">
+                    <span class="nav-label">Informations</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+{% block content %}
+{% endblock %}
+</div>
+<script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+<script src="{% static 'vendor/slimScroll/jquery.slimscroll.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/metisMenu/dist/metisMenu.min.js' %}"></script>
+<script src="{% static 'vendor/peity/jquery.peity.min.js' %}"></script>
+<script src="{% static 'vendor/sparkline/index.js' %}"></script>
+<script src="{% static 'vendor/chartjs/Chart.min.js' %}"></script>
+<script src="{% static 'scripts/charts.js' %}"></script>
+<script src="{% static 'vendor/toastr/build/toastr.min.js' %}"></script>
+<script src="{% static 'vendor/iCheck/icheck.min.js' %}"></script>
+<script src="{% static 'vendor/datatables/media/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'vendor/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'vendor/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'vendor/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js' %}"></script>
+<script src="{% static 'scripts/devdap.js' %}"></script>
+<script>$(function () {
+    $(".demo1").click(function () {
+        swal({
+            title: "Welcome in Alerts",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        })
+    });
+    $(".demo2").click(function () {
+        swal({title: "Good job!", text: "You clicked the button!", type: "success"})
+    });
+    $(".demo3").click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Your will not be able to recover this imaginary file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#C00000",
+            confirmButtonText: "Yes, delete it!"
+        }, function () {
+            swal("Booyah!")
+        })
+    });
+    $(".demo4").click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Your will not be able to recover this imaginary file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#C00000",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (a) {
+            if (a) {
+                swal("Deleted!", "Your imaginary file has been deleted.", "success")
+            } else {
+                swal("Cancelled", "Your imaginary file is safe :)", "error")
+            }
+        })
+    });
+    toastr.options = {
+        debug: false,
+        newestOnTop: false,
+        positionClass: "toast-top-center",
+        closeButton: true,
+        toastClass: "animated fadeInDown",
+    };
+    $(".devdapDemo1").click(function () {
+        toastr.info("Info - This is a custom devdap info notification")
+    });
+    $(".devdapDemo2").click(function () {
+        toastr.success("Success - This is a devdap success notification")
+    });
+    $(".devdapDemo3").click(function () {
+        toastr.warning("Warning - This is a devdap warning notification")
+    });
+    $(".devdapDemo4").click(function () {
+        toastr.error("Error - This is a devdap error notification")
+    })
+});</script>
+<script>$(function () {
+    $("#example1").dataTable({
+        ajax: "api/datatables.json",
+        dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        buttons: [{extend: "copy", className: "btn-sm"}, {
+            extend: "csv",
+            title: "ExampleFile",
+            className: "btn-sm"
+        }, {extend: "pdf", title: "ExampleFile", className: "btn-sm"}, {extend: "print", className: "btn-sm"}]
+    });
+    $("#example2").dataTable()
+});</script>
+</body>
+
+</html>
