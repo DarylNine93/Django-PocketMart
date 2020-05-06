@@ -2,18 +2,19 @@
 
 {% block content %}
 <div id="wrapper">
-    <div class="content">
+    <div class="content animate-panel" data-child="hpanel">
         {% if messages %}
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <span class="pe pe-7s-check" style="font-size:15px"></span>
-            <span style="font-weight:bold"> {{ message }} </span>
-        </div>
-        {% endfor %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <span class="pe pe-7s-check" style="font-size:15px"></span>
+                    <span style="font-weight:bold"> {{ message }} </span>
+                </div>
+            {% endfor %}
         {% endif %}
+
 
         <div class="pull-right">
             <a href="{% url 'categories:add' %}" class="btn btn-block btn-pocketmart-primary"><i class="pe pe-7s-plus"></i>
@@ -21,7 +22,7 @@
         </div>
         <div style="margin-top:3%;">
             {% for category in categories %}
-            <div class="col-md-3" style="margin-top:5%;">
+            <div class="col-md-3 animated-panel " style="margin-top:5%;">
                 <div class="hpanel hbgblue">
                     <div class="panel-body text-center">
                         <img alt="logo" class="img-circle img-small" src="{{ category.image.url }}">
@@ -33,7 +34,7 @@
                                 <a href="{% url 'categories:delete' category.id %}"
                                    class="btn btn-danger  demo3"><i class="pe pe-7s-trash"></i></a>
                             </p>
-                            <p class="small"><a href="#">Liste des Produits</a></p>
+                            <p class="small"><a href="{% url 'products:products_by_category' category.id %}">Liste des Produits</a></p>
                         </div>
                     </div>
                 </div>

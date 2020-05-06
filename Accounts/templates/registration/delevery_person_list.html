@@ -1,0 +1,50 @@
+{% extends 'base_layout.html' %}
+{% load static from staticfiles%}
+
+{% block content %}
+<div id="wrapper">
+    <div class="content">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="text-center alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span class="pe pe-7s-check" style="font-size:15px"></span>
+                <span style="font-weight:bold"> {{ message }} </span>
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="pull-right">
+            <a href="{% url 'create' %}" class="btn btn-block btn-pocketmart-primary"><i class="pe pe-7s-plus"></i>
+                Ajouter un Livreur</a>
+        </div>
+        <div style="margin-top:3%;">
+            {% for delevery_person in delevery_persons %}
+            <div class="col-md-3" style="margin-top:5%;">
+                <div class="hpanel hbgblue">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="{% static 'images/dm.png' %}">
+                        <div class="m-t-sm">
+                            <p><strong>{{ delevery_person.username }}</strong></p>
+                            <p><strong>{{ delevery_person.ville }}</strong></p>
+                        </div>
+                        <p class="small">
+                                <a href="#" class="btn  btn-warning"><i
+                                        class="pe pe-7s-pen"></i></a> |
+                                <a href="#"
+                                   class="btn btn-danger  demo3"><i class="pe pe-7s-trash"></i></a>
+                            </p>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<script>
+
+</script>

@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div class="content">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+
+            <div class="hpanel hred">
+                <div class="panel-body">
+                    <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <p> Etes-vous sur de vouloir supprimer la categorie "{{object}}" ?</p>
+                             <input type="submit" class="btn btn-block btn-danger" value="Confirmer">
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

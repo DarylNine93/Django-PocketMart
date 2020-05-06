@@ -30,13 +30,13 @@
                             <div>{{ form.password }}</div>
                         </div>
                         {# {% if request.POST.next %} #}
-                        <input type="hidden" name="next" value="{{ next }}">
+                            <input type="hidden" name="next" value="{{ next }}">
                         {# {% endif %} #}
                         <p class="pull-right"><a href="{% url 'password_reset' %}" class="mdp-link"> Mot de Passe Oublie ?</a></p>
                         <button class="btn btn-block btn-lg btn-pocketmart-primary" type="submit">Connexion</button>
                         <br>
-                        <button class="btn btn-block btn-lg btn-pocketmart-secondary" type="submit"> Creer un Compte
-                        </button>
+                        <a href="{% url 'signup' %}" class="btn btn-block btn-lg btn-pocketmart-secondary" > Creer un Compte
+                        </a>
                     </form>
                 </div>
             </div>

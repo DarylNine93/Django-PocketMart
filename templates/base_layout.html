@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/pe-icon-7-stroke/css/helper.css' %}">
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
 </head>
 
 <body class="light-skin fixed-navbar sidebar-scroll">
@@ -25,7 +26,7 @@
     <div class="color-line">
     </div>
     <div id="logo" class="light-version">
-            <span>
+            <span style="font-size: 20px;">
                 PocketMart
             </span>
     </div>
@@ -208,146 +209,29 @@
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="overview.html">
-                            <span class="label label-success pull-right">Start</span> Overview
+                            <span class="label label-success pull-right">Start</span> En Cours
                         </a>
                     </li>
                     <li>
-                        <a href="transition_two.html">Columns from up</a>
+                        <a href="#">En Attente</a>
                     </li>
                     <li>
-                        <a href="transition_one.html">Columns custom</a>
+                        <a href="#">Livrees</a>
                     </li>
                     <li>
-                        <a href="transition_three.html">Panels zoom</a>
-                    </li>
-                    <li>
-                        <a href="transition_four.html">Rows from down</a>
-                    </li>
-                    <li>
-                        <a href="transition_five.html">Rows from right</a>
+                        <a href="#">Non Livrees</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{% url 'categories:list' %}">
                     <span class="nav-label">Categories</span>
-                    <span class="fa arrow"></span>
                 </a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="panels.html">Panels design</a>
-                    </li>
-                    <li>
-                        <a href="typography.html">Typography</a>
-                    </li>
-                    <li>
-                        <a href="buttons.html">Colors &amp; Buttons</a>
-                    </li>
-                    <li>
-                        <a href="components.html">Components</a>
-                    </li>
-                    <li>
-                        <a href="alerts.html">Alerts</a>
-                    </li>
-                    <li>
-                        <a href="modals.html">Modals</a>
-                    </li>
-                    <li>
-                        <a href="loading_buttons.html">Loading buttons</a>
-                    </li>
-                    <li>
-                        <a href="draggable.html">Draggable panels</a>
-                    </li>
-                    <li>
-                        <a href="code_editor.html">Code editor</a>
-                    </li>
-                    <li>
-                        <a href="email_template.html">Email template</a>
-                    </li>
-                    <li>
-                        <a href="nestable_list.html">List</a>
-                    </li>
-                    <li>
-                        <a href="tour.html">Tour</a>
-                    </li>
-                    <li>
-                        <a href="icons.html">Icons library</a>
-                    </li>
-                </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{% url 'products:list' %}">
                     <span class="nav-label">Produits</span>
-                    <span class="fa arrow"></span>
                 </a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="contacts.html">Contacts</a>
-                    </li>
-                    <li>
-                        <a href="projects.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="project.html">Project detail</a>
-                    </li>
-                    <li>
-                        <a href="app_plans.html">App plans</a>
-                    </li>
-                    <li>
-                        <a href="social_board.html">Social board</a>
-                    </li>
-                    <li>
-                        <a href="faq.html">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="timeline.html">Timeline</a>
-                    </li>
-                    <li>
-                        <a href="notes.html">Notes</a>
-                    </li>
-                    <li>
-                        <a href="profile.html">Profile</a>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">Mailbox</a>
-                    </li>
-                    <li>
-                        <a href="mailbox_compose.html">Email compose</a>
-                    </li>
-                    <li>
-                        <a href="mailbox_view.html">Email view</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="blog_details.html">Blog article</a>
-                    </li>
-                    <li>
-                        <a href="forum.html">Forum</a>
-                    </li>
-                    <li>
-                        <a href="forum_details.html">Forum details</a>
-                    </li>
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="calendar.html">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="invoice.html">Invoice</a>
-                    </li>
-                    <li>
-                        <a href="file_manager.html">File manager</a>
-                    </li>
-                    <li>
-                        <a href="chat_view.html">Chat view</a>
-                    </li>
-                    <li>
-                        <a href="search.html">Search view</a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a href="#">
@@ -356,19 +240,16 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="chartjs.html">ChartJs</a>
+                        <a href="#">Tous les utilisateurs</a>
                     </li>
                     <li>
-                        <a href="flot.html">Flot charts</a>
+                        <a href="#">Administrateurs</a>
                     </li>
                     <li>
-                        <a href="inline.html">Inline graphs</a>
+                        <a href="#">Clients</a>
                     </li>
                     <li>
-                        <a href="chartist.html">Chartist</a>
-                    </li>
-                    <li>
-                        <a href="c3.html">C3 Charts</a>
+                        <a href="#">Livreurs</a>
                     </li>
                 </ul>
             </li>
@@ -384,7 +265,6 @@
 {% block content %}
 {% endblock %}
 </div>
-<script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'vendor/jquery-ui/jquery-ui.min.js' %}"></script>
 <script src="{% static 'vendor/slimScroll/jquery.slimscroll.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
@@ -462,7 +342,8 @@
     $(".devdapDemo4").click(function () {
         toastr.error("Error - This is a devdap error notification")
     })
-});</script>
+});
+</script>
 <script>$(function () {
     $("#example1").dataTable({
         ajax: "api/datatables.json",
@@ -475,7 +356,8 @@
         }, {extend: "pdf", title: "ExampleFile", className: "btn-sm"}, {extend: "print", className: "btn-sm"}]
     });
     $("#example2").dataTable()
-});</script>
+});
+</script>
 </body>
 
 </html>

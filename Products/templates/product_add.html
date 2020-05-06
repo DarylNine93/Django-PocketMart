@@ -1,0 +1,63 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div id="wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="hpanel hgreen">
+                    <div class="panel-body">
+                        {{ form.non_field_errors }}
+                        <form method="POST"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>
+                                    <h4>Ajouter un Produit</h4>
+                                </legend>
+                                <div class="row">
+                                    <div class="col-sm-6 border-right">
+                                        {{ form.nom.errors }}
+                                        {{form.name | as_crispy_field}}
+
+
+                                        {{ form.description.errors }}
+                                        {{form.description | as_crispy_field}}
+
+
+                                        {{ form.regular_price.errors }}
+                                        {{form.regular_price | as_crispy_field}}
+
+                                         {{ form.promotional_price.errors }}
+                                        {{form.promotional_price | as_crispy_field}}
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        {{ form.weight.errors }}
+                                        {{form.weight | as_crispy_field}}
+
+                                        {{ form.image.errors }}
+                                        {{form.image | as_crispy_field}}
+
+                                        {{ form.category.errors }}
+                                        {{form.category | as_crispy_field }}
+                                    </div>
+                                </div>
+                                <br>
+                                <button class="btn btn-lg btn-pocketmart-primary btn-block  pull-right" type="submit">Ajouter
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -5,6 +5,11 @@
       src: url("../fonts/OpenSansCondensed-Light.ttf") format('truetype');
   }
 
+  @font-face{
+     font-family: 'Open Sans Condensed';
+      src: url("../fonts/OpenSansCondensed-Bold.ttf") format('truetype');
+  }
+
 
 .h-modal-icon {
     font-size: 66px

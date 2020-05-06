@@ -1,0 +1,91 @@
+{% extends 'base_layout2.html'%}
+
+{% block content %}
+
+
+
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Créer un Compte Livreur</h3>
+                <small> Administration PocketMart | Creer votre compte Livreur</small>
+            </div>
+            <div class="hpanel animated-panel zoomIn" style="animation-delay: 0.1s;">
+                <div class="panel-body no-shadow th-border">
+                    <form method="POST" id="signupForm" action="{% url 'create' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6 border-right">
+                                <div class="form-group">
+                                    {{ form.username.errors}}
+                                    <label for="username" class="control-label">Nom d'utilisateur:</label>
+                                    {{form.username}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.password1.errors }}
+                                    <label for="password1" class="control-label">Mot de Passe:</label>
+                                    {{form.password1}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.password2.errors }}
+                                    <label for="password2" class="control-label">Retapez le Mot de Passe:</label>
+                                    {{form.password2}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.email.errors }}
+                                    <label for="email" class="control-label">Email:</label>
+                                    {{form.email}}
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.phone.errors }}
+                                    <label for="telephone" class="control-label">Telephone:</label>
+                                    {{form.phone}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.code.errors }}
+                                    <label for="code" class="control-label">Code Livreur:</label>
+                                    {{form.code}}
+                                </div>
+
+
+                                <div class="form-group">
+                                    {{ form.ville.errors }}
+                                    <label for="ville" class="control-label">Ville:</label>
+                                    {{form.ville}}
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-block btn-lg btn-pocketmart-primary" type="submit">Creer un Compte
+                            </button>
+                            <br>
+                            <button class="btn btn-block btn-lg btn-pocketmart-secondary" type="submit">Connexion
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <strong>Administration PocketMart </strong> - Produit de Stellar Constructions & Maintenance Limited
+        <br/> 2018 Copyrights. Tous droits reserves.
+    </div>
+</div>
+
+{% endblock %}

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'Accounts',
     'Categories',
+    'Products',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,8 @@ EMAIL_USE_TLS = True
 # Crispy Forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Login URL
+
+
+
