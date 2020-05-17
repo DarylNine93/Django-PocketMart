@@ -9,5 +9,5 @@ class CustomUser(AbstractUser):
     ville = models.CharField(max_length=25, null=False)
 
 
-class DeleveryPerson(CustomUser):
+class DeliveryPerson(CustomUser):
     code = models.CharField(max_length=10, null=False, unique=True)

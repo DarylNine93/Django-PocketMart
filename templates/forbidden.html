@@ -1,0 +1,13 @@
+{% extends 'base_layout2.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+<div class="content">
+    <div style="text-align: center">
+        <img alt="forbidden" src="{% static 'images/forbidden.jpg' %}">
+        <h2 style="text-align: center">Vous n'etes pas authorise a acceder a cette fonctionnalite</h2>
+    </div>
+
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .choices import VILLES
 from django.core.exceptions import ValidationError
-from .models import DeleveryPerson
+from .models import DeliveryPerson
 from .random_code import CODE
 
 
@@ -42,7 +42,7 @@ class DeliveryPersonForm(UserCreationForm):
     code = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'readonly': True}), initial=CODE)
 
     class Meta:
-        model = DeleveryPerson
+        model = DeliveryPerson
         fields = ('username', 'email', 'password1', 'password2', 'phone', 'ville', 'code')
 
     def clean_password2(self):
